@@ -2,8 +2,9 @@
 const list = require('emoji.json/emoji-compact.json')
 const exec = require('child_process').exec
 
-console.log(
-  process.argv[2]
-  ? process.argv[2].split(' ')[0]
-  : list.data.map(item => `${item[1]} ${item[2].toLowerCase()} (${item[3].replace(/\| /g, '')})`).join('\n')
+exec(
+  `echo '${list.data.map(item => `${item[1]} ${item[2].toLowerCase()} (${item[3].replace(/\| /g, '')})`).join('\n')}' | rofi -dmenu`,
+  (error, choice) => error
+    ? console.error(error)
+    : exec(`xdotool type ${choice.split(' ')[0]}`)
 )

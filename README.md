@@ -12,5 +12,5 @@ bind it to a key like
 
 ```ini
 [keybindings]
-M-S-e = xdotool type $(node path/to/rofi-emoji $(node path/to/rofi-emoji | rofi -dmenu))
+M-S-e = rofi-emoji
 ```

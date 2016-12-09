@@ -1,0 +1,10 @@
+{
+  "name": "rofi-emoji",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "chee <chee@snake.dog>",
+  "license": "MIT",
+  "dependencies": {
+    "emoji.json": "^1.2.0"
+  }
+}

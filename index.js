@@ -7,7 +7,6 @@ exec(
   (error, choice) => {
     if (error) throw error
     const emoji = choice.split(' ')[0]
-    exec(`xdotool type ' ${emoji}'`)
     exec(`echo -n ${emoji} | xsel -b`)
   }
 )

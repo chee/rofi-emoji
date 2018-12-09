@@ -1,12 +1,21 @@
 #!/usr/bin/env node
-const list = require('emoji.json/emoji-compact.json')
-const exec = require('child_process').exec
+let list = require('emoji.json')
+let exec = require('child_process').exec
+
+let sanitizeKeywords = keywords =>
+	keywords.replace(/[|] /, '')
+
+let emojiString = list.reduce((emojiString, emoji) =>
+	emojiString.concat(
+		`${emoji.char} ${emoji.name.toLowerCase()} (${sanitizeKeywords(emoji.keywords)})
+`)
+, '')
 
 exec(
-  `echo '${list.data.map(item => `${item[1]} ${item[2].toLowerCase()} (${item[3].replace(/\| /g, '')})`).join('\n')}' | rofi -dmenu`,
+  `echo '${emojiString}' | rofi -dmenu`,
   (error, choice) => {
     if (error) throw error
-    const emoji = choice.split(' ')[0]
+    let emoji = choice.split(' ')[0]
     exec(`echo -n ${emoji} | xsel -b`)
   }
 )

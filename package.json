@@ -5,7 +5,7 @@
   "author": "chee <chee@snake.dog>",
   "license": "MIT",
   "dependencies": {
-    "emoji.json": "^1.2.0"
+    "emoji.json": "^11.0.1"
   },
   "bin": "./index.js"
 }

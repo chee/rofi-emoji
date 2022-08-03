@@ -2,7 +2,7 @@
   "name": "rofi-emoji",
   "version": "2.0.0",
   "main": "index.js",
-  "author": "chee <chee@snake.dog>",
+  "author": "chee <yay@chee.party>",
   "license": "MIT",
   "dependencies": {
     "emoji.json": "^11.0.1"
